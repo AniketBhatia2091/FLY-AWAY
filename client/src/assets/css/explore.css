@@ -1,0 +1,199 @@
+/* ========================================
+   EXPLORE SECTION - MODERN DESIGN
+   ======================================== */
+
+.explore-section {
+    position: relative;
+    width: 100%;
+    padding: var(--space-20) var(--space-4);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    overflow: hidden;
+}
+
+.explore-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.explore-content {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+}
+
+.explore-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.explore-icon svg {
+    color: white;
+}
+
+.explore-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+}
+
+.explore-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-base);
+}
+
+.search-container:focus-within {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.search-icon {
+    margin-left: var(--space-4);
+    color: rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+}
+
+.search-container input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: var(--space-3) var(--space-2);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: white;
+    outline: none;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-container button {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-container button:hover {
+    background: #f0f0f0;
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-container button:active {
+    transform: translateX(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .explore-section {
+        padding: var(--space-12) var(--space-3);
+    }
+
+    .explore-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .explore-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .explore-subtitle {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-6);
+    }
+
+    .search-container {
+        flex-direction: column;
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .search-icon {
+        display: none;
+    }
+
+    .search-container input,
+    .search-container button {
+        width: 100%;
+    }
+
+    .search-container button:hover {
+        transform: none;
+    }
+}

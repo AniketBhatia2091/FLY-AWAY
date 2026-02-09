@@ -1,0 +1,292 @@
+/* ========================================
+   HERO SEARCH - PREMIUM DESIGN
+   ======================================== */
+
+.hero-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Search Container */
+.hero-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-full);
+    padding: var(--space-2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-base);
+}
+
+.hero-search-container:focus-within {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+        0 0 0 3px rgba(249, 115, 22, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Search Icon */
+.search-icon {
+    color: rgba(255, 255, 255, 0.9);
+    margin-left: var(--space-3);
+    flex-shrink: 0;
+}
+
+/* Search Input */
+.hero-search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: var(--space-3) var(--space-2);
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: white;
+    outline: none;
+}
+
+.hero-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Clear Button */
+.clear-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: var(--radius-full);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.clear-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+/* Search Button */
+.hero-search-btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.hero-search-btn:hover:not(:disabled) {
+    background: var(--color-accent-dark);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.6),
+        0 8px 16px rgba(249, 115, 22, 0.3);
+    transform: scale(1.02);
+}
+
+.hero-search-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.hero-search-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Autocomplete Dropdown */
+.autocomplete-dropdown {
+    position: absolute;
+    top: calc(100% + var(--space-2));
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2),
+        0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideDown 0.2s ease-out;
+    z-index: 100;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typo Correction */
+.typo-correction {
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.typo-suggestion {
+    color: var(--color-accent);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.typo-suggestion:hover {
+    color: var(--color-accent-dark);
+}
+
+/* Suggestions List */
+.suggestions-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.suggestion-icon {
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+}
+
+.suggestion-content {
+    flex: 1;
+}
+
+.suggestion-name {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 2px;
+}
+
+.suggestion-location {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+/* Loading & No Results */
+.searching-state,
+.no-results {
+    padding: var(--space-4);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+}
+
+/* Trending Chips */
+.trending-chips {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.trending-icon {
+    color: rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+}
+
+.trending-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.trending-chip {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.trending-chip:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.trending-chip:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-search-wrapper {
+        max-width: 100%;
+        padding: 0 var(--space-4);
+    }
+
+    .hero-search-container {
+        flex-wrap: wrap;
+    }
+
+    .hero-search-input {
+        font-size: var(--text-base);
+        min-width: 0;
+    }
+
+    .hero-search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trending-chips {
+        font-size: var(--text-xs);
+    }
+
+    .trending-chip {
+        font-size: var(--text-xs);
+        padding: 6px var(--space-2);
+    }
+}

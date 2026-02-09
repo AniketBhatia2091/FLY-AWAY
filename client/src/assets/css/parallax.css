@@ -1,0 +1,103 @@
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+/* Parallax Section with a scenic image */
+.parallax {
+    background-image: url('https://images.unsplash.com/photo-1532608033-bdd5728f57fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjA1fDB8MHxwaG90by1mZWVkfDJ8MHx8ZGVzdGluYXRpb258ZW58MHx8fHwxNjk2Nzg3Mzk5&ixlib=rb-1.2.1&q=80&w=1080'); /* A scenic image */
+    height: 500px; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Container with transparency */
+.container {
+    background: transparent; /* Make the container fully transparent */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: shadow to make content stand out */
+    max-width: 600px;
+    width: 100%;
+    margin-top: -50px; /* To make it look like it's floating over the parallax background */
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#location-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.result-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.result-item p {
+    font-size: 1em;
+    color: #555;
+}

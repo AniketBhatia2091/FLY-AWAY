@@ -1,0 +1,208 @@
+/* ========================================
+   DESTINATION PAGE - MODERN ITINERARY
+   ======================================== */
+
+.destination-page {
+    width: 100%;
+    padding-top: var(--navbar-height);
+    background: var(--color-bg);
+}
+
+/* Hero Header */
+.destination-header {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 50vh;
+    min-height: 400px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.destination-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-overlay);
+}
+
+.destination-header-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    max-width: var(--max-width);
+    padding: 0 var(--space-4);
+}
+
+.destination-header-content h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.destination-header-content p {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Itinerary Section */
+.itinerary-container {
+    max-width: var(--max-width);
+    margin: var(--space-10) auto;
+    padding: 0 var(--space-4);
+}
+
+.itinerary-container h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+    text-align: center;
+}
+
+.itinerary-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+/* Day Tabs */
+.day-tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.day-tab {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-width: 120px;
+    text-align: center;
+}
+
+.day-tab:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.day-tab.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* Day Content */
+.day-content {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-lg);
+}
+
+.day-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.day-content h3::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 36px;
+    background: var(--color-accent);
+    border-radius: var(--radius-sm);
+}
+
+.day-content p {
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* Loading & Message States */
+.message {
+    text-align: center;
+    padding: var(--space-10) var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .destination-header {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .destination-header-content h1 {
+        font-size: var(--text-3xl);
+    }
+
+    .destination-header-content p {
+        font-size: var(--text-base);
+    }
+
+    .itinerary-container {
+        margin: var(--space-8) auto;
+    }
+
+    .itinerary-container h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .day-tabs {
+        gap: var(--space-1);
+    }
+
+    .day-tab {
+        padding: var(--space-2) var(--space-3);
+        min-width: 90px;
+        font-size: var(--text-sm);
+    }
+
+    .day-content {
+        padding: var(--space-4);
+    }
+
+    .day-content h3 {
+        font-size: var(--text-xl);
+    }
+
+    .day-content p {
+        font-size: var(--text-base);
+    }
+}

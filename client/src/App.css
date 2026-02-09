@@ -1,0 +1,174 @@
+/* App.css -Main application structure */
+
+/* Import all component styles */
+@import './assets/css/navbar.css';
+@import './assets/css/slideshow.css';
+@import './assets/css/recentdeals.css';
+@import './assets/css/whyus.css';
+@import './assets/css/gallery.css';
+@import './assets/css/explore.css';
+@import './assets/css/stats.css';
+@import './assets/css/footer.css';
+@import './assets/css/review.css';
+@import './assets/css/destination.css';
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Photo Gallery Section Title */
+.section-title {
+  text-align: center;
+  padding: var(--space-8) var(--space-4) var(--space-2);
+  background: var(--color-bg);
+}
+
+.section-title h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.section-sub-title {
+  text-align: center;
+  padding: 0 var(--space-4) var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-bg);
+}
+
+.section-sub-title p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+}
+
+/* Gallery Section */
+.topwear-tabs {
+  padding: var(--space-8) var(--space-4);
+  background: var(--color-bg);
+}
+
+/* Gallery Tabs Container */
+.tab-cont {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.tab {
+  display: inline-flex;
+  gap: var(--space-1);
+  background: var(--color-surface);
+  padding: var(--space-1);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.tablinks {
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  color: var(--color-text-secondary);
+}
+
+.tablinks:hover {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.tablinks.active {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Tab Content Grid */
+.tab-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.image-overlay-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.image-overlay-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.image-overlay-container:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay-container .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, var(--color-overlay));
+  padding: var(--space-4);
+  transform: translateY(100%);
+  transition: transform var(--transition-base);
+}
+
+.image-overlay-container:hover .overlay {
+  transform: translateY(0);
+}
+
+.image-overlay-container .overlay p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .tab-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
